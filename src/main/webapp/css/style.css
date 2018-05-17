@@ -111,10 +111,7 @@
 }
 
 
-input[type="submit"]:hover, input[type="button"]:hover, button:hover {
-	background-color: midnightblue;
-	color: white;
-}
+
 
 #loginWindow {
 	background-image: url("../images/wallpaper.jpg");

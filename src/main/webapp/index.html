@@ -6,6 +6,7 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/logos.js"></script>
+	<meta charset="utf-8">
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, shrink-to-fit=no"></meta>
 	
@@ -38,6 +39,9 @@
 								<li><span class="glyphicon glyphicon-old-man"></span><a href="#"  >Gestion Professeurs</a></li>
 								<li><span class="glyphicon glyphicon-woman"></span><a href="#"  >Gestion Eleves</a></li>
 								
+								<div style="height: 150px;"></div>
+								
+								<button id="declencher-traitement" style="color: navy;">Démonstration</button>
 							</ul>
 						</div>
 						
@@ -46,10 +50,21 @@
 			</div>
 			<div class="col-sm-10">
 			<!-- 	<ui:insert name="contenu" /> -->
-				<iframe src="http://localhost:5601/app/kibana#/dashboard/347394b0-59b6-11e8-8df4-a5e8b00dd0c5?embed=true&amp;_g=(refreshInterval%3A(display%3AOff%2Cpause%3A!f%2Cvalue%3A0)%2Ctime%3A(from%3A'2017-05-17T22%3A00%3A00.000Z'%2Cmode%3Aabsolute%2Cto%3A'2018-05-15T21%3A59%3A59.999Z'))" height="1600" width="1600"></iframe>
-				
+<iframe src="http://localhost:5601/app/kibana#/dashboard/347394b0-59b6-11e8-8df4-a5e8b00dd0c5?embed=true&_g=(refreshInterval%3A('%24%24hashKey'%3A'object%3A776'%2Cdisplay%3A'5%20seconds'%2Cpause%3A!f%2Csection%3A1%2Cvalue%3A5000)%2Ctime%3A(from%3A'2017-05-17T22%3A00%3A00.000Z'%2Cmode%3Aabsolute%2Cto%3A'2018-05-15T21%3A59%3A59.999Z'))" height="1600" width="1600"></iframe>				
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		console.log('JS en fin de page');
+		$('#declencher-traitement').click(function(){
+			$.ajax({
+				  url: "declencher",
+				}).success(function() {
+				  alert('traitement déclenché.')
+				});
+		});	
+	});
+	</script>
 </body>
 </html>
